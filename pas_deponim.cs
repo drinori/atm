@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace atm
 {
-    public partial class pas_terheqjes : Form
+    public partial class pas_deponim : Form
     {
-        public pas_terheqjes()
+        public pas_deponim()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace atm
 {
-    public partial class pas_terheqjes : Form
+    public partial class deponim : Form
     {
-        public pas_terheqjes()
+        public deponim()
         {
             InitializeComponent();
         }

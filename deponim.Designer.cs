@@ -1,7 +1,6 @@
 ﻿namespace atm
 {
-    partial class pas_terheqjes
-
+    partial class deponim
     {
         /// <summary>
         /// Required designer variable.
@@ -30,61 +29,71 @@
         private void InitializeComponent()
         {
             textBox1 = new TextBox();
+            panel1 = new Panel();
             button1 = new Button();
             button2 = new Button();
-            panel1 = new Panel();
+            button3 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(311, 184);
+            textBox1.Location = new Point(291, 224);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(321, 47);
+            textBox1.Size = new Size(388, 66);
             textBox1.TabIndex = 0;
-            textBox1.Text = "Tërheqja u krye me sukses!";
-            textBox1.TextAlign = HorizontalAlignment.Center;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button1);
+            panel1.Location = new Point(-1, 444);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(963, 96);
+            panel1.TabIndex = 1;
             // 
             // button1
             // 
             button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(190, 14);
+            button1.Location = new Point(86, 16);
             button1.Name = "button1";
-            button1.Size = new Size(168, 69);
-            button1.TabIndex = 1;
-            button1.Text = "Menu";
+            button1.Size = new Size(178, 68);
+            button1.TabIndex = 2;
+            button1.Text = "Kthehu";
             button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
             button2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(609, 14);
+            button2.Location = new Point(688, 16);
             button2.Name = "button2";
-            button2.Size = new Size(161, 69);
-            button2.TabIndex = 2;
-            button2.Text = "Çkyçu";
+            button2.Size = new Size(186, 68);
+            button2.TabIndex = 3;
+            button2.Text = "Vazhdo";
             button2.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // button3
             // 
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
-            panel1.Location = new Point(-1, 398);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(944, 96);
-            panel1.TabIndex = 3;
+            button3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.Location = new Point(391, 16);
+            button3.Name = "button3";
+            button3.Size = new Size(178, 68);
+            button3.TabIndex = 4;
+            button3.Text = "Anulo";
+            button3.UseVisualStyleBackColor = true;
+            // button3.Click += this.button3_Click;
             // 
-            // pas_terheqjes
+            // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(942, 493);
+            ClientSize = new Size(960, 540);
             Controls.Add(panel1);
             Controls.Add(textBox1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "pas_terheqjes";
+            Name = "Form1";
             Text = "Form1";
             panel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -94,8 +103,9 @@
         #endregion
 
         private TextBox textBox1;
-        private Button button1;
-        private Button button2;
         private Panel panel1;
+        private Button button3;
+        private Button button2;
+        private Button button1;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace atm
 {
-    partial class login
+    partial class kycja
     {
         /// <summary>
         ///  Required designer variable.

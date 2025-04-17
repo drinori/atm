@@ -1,8 +1,8 @@
 namespace atm
 {
-    public partial class login : Form
+    public partial class kycja : Form
     {
-        public login()
+        public kycja()
         {
             InitializeComponent();
         }

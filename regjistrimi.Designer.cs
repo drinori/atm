@@ -58,6 +58,7 @@
             RegjistrohuR.TabIndex = 4;
             RegjistrohuR.Text = "Regjistrohu";
             RegjistrohuR.UseVisualStyleBackColor = true;
+            RegjistrohuR.Click += RegjistrohuR_Click;
             // 
             // label1
             // 
@@ -68,7 +69,6 @@
             label1.Size = new Size(60, 31);
             label1.TabIndex = 5;
             label1.Text = "Emri";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -99,7 +99,6 @@
             label4.Size = new Size(55, 31);
             label4.TabIndex = 9;
             label4.Text = "CVC";
-            label4.Click += label4_Click;
             // 
             // pinR
             // 

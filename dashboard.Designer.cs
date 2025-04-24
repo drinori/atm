@@ -1,6 +1,6 @@
 ﻿namespace atm
 {
-    partial class dashboard
+    partial class Dashboard
     {
         /// <summary>
         /// Required designer variable.

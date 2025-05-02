@@ -16,5 +16,10 @@ namespace atm
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("hekladsa");
+        }
     }
 }

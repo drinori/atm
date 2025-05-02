@@ -31,42 +31,46 @@ namespace atm
                 return;
             }
 
-            // Validate numeric inputs
-            if (!int.TryParse(pinR.Text, out int pin) || !int.TryParse(CVC.Text, out int cvc))
-            {
-                MessageBox.Show("PIN dhe CVC duhet të jenë numra.");
-                return;
-            }
 
-            string insertQuery = "INSERT INTO perdoruesit (emri, mbiemri, iban, pin, cvc, bilanci) " +
-                                 "VALUES (@Emri, @Mbiemri, @Iban, @Pin, @Cvc, @Bilanci)";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                // Validate numeric inputs
+                if (!int.TryParse(pinR.Text, out int pin) || !int.TryParse(CVC.Text, out int cvc))
                 {
-                    // Bind form data to SQL parameters
-                    command.Parameters.AddWithValue("@Emri", Emri.Text);
-                    command.Parameters.AddWithValue("@Mbiemri", Mbiemri.Text);
-                    command.Parameters.AddWithValue("@Iban", ibanR.Text);
-                    command.Parameters.AddWithValue("@Pin", pin);
-                    command.Parameters.AddWithValue("@Cvc", cvc);
-                    command.Parameters.AddWithValue("@Bilanci", bilanci);
-
-                    try
-                    {
-                        connection.Open();
-                        int rowsAffected = command.ExecuteNonQuery();
-                        MessageBox.Show("Regjistrimi u krye me sukses!");
-                        connection.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Gabim gjatë regjistrimit: " + ex.Message);
-                    }
+                    MessageBox.Show("PIN dhe CVC duhet të jenë numra.");
+                    return;
                 }
-            }
-        }
 
+                string insertQuery = "INSERT INTO perdoruesit (emri, mbiemri, iban, pin, cvc, bilanci) " +
+                                  "VALUES (@Emri, @Mbiemri, @Iban, @Pin, @Cvc, @Bilanci)";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                 {
+                     using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                     {
+                         // Bind form data to SQL parameters
+                         command.Parameters.AddWithValue("@Emri", Emri.Text);
+                         command.Parameters.AddWithValue("@Mbiemri", Mbiemri.Text);
+                         command.Parameters.AddWithValue("@Iban", ibanR.Text);
+                         command.Parameters.AddWithValue("@Pin", pin);
+                         command.Parameters.AddWithValue("@Cvc", cvc);
+                         command.Parameters.AddWithValue("@Bilanci", bilanci);
+
+                         try
+                         {
+                             connection.Open();
+                             int rowsAffected = command.ExecuteNonQuery();
+                             MessageBox.Show("Regjistrimi u krye me sukses!");
+                             // kycja kycja = new kycja();
+                             // kycja.Show();
+                             // this.Hide();
+                             connection.Close();
+                         }
+                         catch (Exception ex)
+                         {
+                             MessageBox.Show("Gabim gjatë regjistrimit: " + ex.Message);
+                         }
+                     }
+                 }
+            }
+
+        }
     }
-}

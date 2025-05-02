@@ -16,5 +16,9 @@ namespace atm
         {
             InitializeComponent();
         }
+
+        string connectionString = "Data Source=DESKTOP-8F3GQ0A\\SQLEXPRESS;Initial Catalog=atm;Integrated Security=True";
+
+        
     }
 }

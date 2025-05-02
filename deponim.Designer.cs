@@ -30,9 +30,9 @@
         {
             textBox1 = new TextBox();
             panel1 = new Panel();
-            button1 = new Button();
-            button2 = new Button();
             button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -54,15 +54,15 @@
             panel1.Size = new Size(963, 96);
             panel1.TabIndex = 1;
             // 
-            // button1
+            // button3
             // 
-            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(86, 16);
-            button1.Name = "button1";
-            button1.Size = new Size(178, 68);
-            button1.TabIndex = 2;
-            button1.Text = "Kthehu";
-            button1.UseVisualStyleBackColor = true;
+            button3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.Location = new Point(391, 16);
+            button3.Name = "button3";
+            button3.Size = new Size(178, 68);
+            button3.TabIndex = 4;
+            button3.Text = "Anulo";
+            button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -73,19 +73,19 @@
             button2.TabIndex = 3;
             button2.Text = "Vazhdo";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
-            // button3
+            // button1
             // 
-            button3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(391, 16);
-            button3.Name = "button3";
-            button3.Size = new Size(178, 68);
-            button3.TabIndex = 4;
-            button3.Text = "Anulo";
-            button3.UseVisualStyleBackColor = true;
-            // button3.Click += this.button3_Click;
+            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(86, 16);
+            button1.Name = "button1";
+            button1.Size = new Size(178, 68);
+            button1.TabIndex = 2;
+            button1.Text = "Kthehu";
+            button1.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // deponim
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -93,7 +93,7 @@
             Controls.Add(panel1);
             Controls.Add(textBox1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
+            Name = "deponim";
             Text = "Form1";
             panel1.ResumeLayout(false);
             ResumeLayout(false);

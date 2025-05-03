@@ -10,11 +10,25 @@ using System.Windows.Forms;
 
 namespace atm
 {
-    public partial class Dashboard : Form
+    public partial class dashboard : Form
     {
-        public Dashboard()
+        public dashboard()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            regjistrimi regjistrimi = new regjistrimi();
+            regjistrimi.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            kyqja kyqja = new kyqja();
+            kyqja.Show();
+            this.Hide();
         }
     }
 }

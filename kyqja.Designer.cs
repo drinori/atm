@@ -31,6 +31,7 @@
             Kyqu = new Button();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
+            linkLabel1 = new LinkLabel();
             SuspendLayout();
             // 
             // Kyqu
@@ -38,7 +39,7 @@
             Kyqu.Font = new Font("Segoe UI", 14F);
             Kyqu.Location = new Point(466, 327);
             Kyqu.Name = "Kyqu";
-            Kyqu.Size = new Size(194, 49);
+            Kyqu.Size = new Size(167, 49);
             Kyqu.TabIndex = 0;
             Kyqu.Text = "Kyçu";
             Kyqu.UseVisualStyleBackColor = true;
@@ -62,11 +63,24 @@
             textBox2.Size = new Size(282, 46);
             textBox2.TabIndex = 2;
             // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("Segoe UI", 12F);
+            linkLabel1.Location = new Point(639, 344);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(111, 28);
+            linkLabel1.TabIndex = 3;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Regjistrohu";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
             // kyqja
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(linkLabel1);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(Kyqu);
@@ -82,5 +96,6 @@
         private Button Kyqu;
         private TextBox textBox1;
         private TextBox textBox2;
+        private LinkLabel linkLabel1;
     }
 }

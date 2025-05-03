@@ -24,30 +24,46 @@ namespace atm
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                connection.Open();
-                string query = "SELECT * FROM perdoruesit WHERE iban = @Iban AND pin = @Pin";
-                using (SqlCommand command = new SqlCommand(query, connection))
+                try
                 {
-                    command.Parameters.AddWithValue("@Iban", textBox1.Text);
-                    command.Parameters.AddWithValue("@Pin", textBox2.Text);
+                    connection.Open();
+                    string query = "SELECT emri FROM perdoruesit WHERE iban = @Iban AND pin = @Pin";
 
-                    SqlDataReader reader = command.ExecuteReader();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Use the correct parameter types and values
+                        command.Parameters.AddWithValue("@Iban", textBox1.Text);
+                        command.Parameters.AddWithValue("@Pin", textBox2.Text);
 
-                    if (reader.Read())
-                    {
-                        // string emri = reader["emri"].ToString();
-                        // labelWelcome.Text = "Miresevini, " + emri;
-                        // User found, proceed to the next form
-                        menu menu = new menu();
-                        menu.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Iban ose PIN i gabuar.");
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read()) // If data is returned
+                            {
+                                string emri = reader["emri"].ToString(); // Safely get the "emri" column value
+                                menu menuForm = new menu(emri); // Pass emri to the menu form
+                                menuForm.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Iban ose PIN i gabuar.");
+                            }
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ndodhi nje gabim: " + ex.Message, "Gabim", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            regjistrimi regjistrimi = new regjistrimi();
+            regjistrimi.Show();
+            this.Hide();
         }
     }
 }

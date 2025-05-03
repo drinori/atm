@@ -32,45 +32,65 @@ namespace atm
             }
 
 
-                // Validate numeric inputs
-                if (!int.TryParse(pinR.Text, out int pin) || !int.TryParse(CVC.Text, out int cvc))
-                {
-                    MessageBox.Show("PIN dhe CVC duhet të jenë numra.");
-                    return;
-                }
-
-                string insertQuery = "INSERT INTO perdoruesit (emri, mbiemri, iban, pin, cvc, bilanci) " +
-                                  "VALUES (@Emri, @Mbiemri, @Iban, @Pin, @Cvc, @Bilanci)";
-
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                 {
-                     using (SqlCommand command = new SqlCommand(insertQuery, connection))
-                     {
-                         // Bind form data to SQL parameters
-                         command.Parameters.AddWithValue("@Emri", Emri.Text);
-                         command.Parameters.AddWithValue("@Mbiemri", Mbiemri.Text);
-                         command.Parameters.AddWithValue("@Iban", ibanR.Text);
-                         command.Parameters.AddWithValue("@Pin", pin);
-                         command.Parameters.AddWithValue("@Cvc", cvc);
-                         command.Parameters.AddWithValue("@Bilanci", bilanci);
-
-                         try
-                         {
-                             connection.Open();
-                             int rowsAffected = command.ExecuteNonQuery();
-                             MessageBox.Show("Regjistrimi u krye me sukses!");
-                             // kycja kycja = new kycja();
-                             // kycja.Show();
-                             // this.Hide();
-                             connection.Close();
-                         }
-                         catch (Exception ex)
-                         {
-                             MessageBox.Show("Gabim gjatë regjistrimit: " + ex.Message);
-                         }
-                     }
-                 }
+            // Validate numeric inputs
+            if (!int.TryParse(pinR.Text, out int pin) || !int.TryParse(CVC.Text, out int cvc))
+            {
+                MessageBox.Show("PIN dhe CVC duhet të jenë numra.");
+                return;
             }
 
+            string insertQuery = "INSERT INTO perdoruesit (emri, mbiemri, iban, pin, cvc, bilanci) " +
+                              "VALUES (@Emri, @Mbiemri, @Iban, @Pin, @Cvc, @Bilanci)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                {
+                    // Check if the IBAN already exists
+                    string checkIbanQuery = "SELECT COUNT(*) FROM perdoruesit WHERE iban = @Iban";
+                    SqlCommand checkCommand = new SqlCommand(checkIbanQuery, connection);
+                    checkCommand.Parameters.AddWithValue("@Iban", ibanR.Text);
+
+                    connection.Open();
+                    int count = (int)checkCommand.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Ky IBAN ekziston tashmë. Ju lutem përdorni një tjetër.");
+                        return;
+                    }
+
+                    // If the IBAN does not exist, proceed with the insert
+                    // Bind form data to SQL parameters
+                    command.Parameters.AddWithValue("@Emri", Emri.Text);
+                    command.Parameters.AddWithValue("@Mbiemri", Mbiemri.Text);
+                    command.Parameters.AddWithValue("@Iban", ibanR.Text);
+                    command.Parameters.AddWithValue("@Pin", pin);
+                    command.Parameters.AddWithValue("@Cvc", cvc);
+                    command.Parameters.AddWithValue("@Bilanci", bilanci);
+
+                    try
+                    {
+                        int rowsAffected = command.ExecuteNonQuery();
+                        connection.Close();
+                        MessageBox.Show("Regjistrimi u krye me sukses!");  
+                        kyqja kyqja = new kyqja();
+                        kyqja.Show();
+                        this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Gabim gjatë regjistrimit: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            kyqja kyqja = new kyqja();
+            kyqja.Show();
+            this.Hide();
         }
     }
+}

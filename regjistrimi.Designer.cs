@@ -39,6 +39,7 @@
             CVC = new TextBox();
             Mbiemri = new TextBox();
             label5 = new Label();
+            linkLabel1 = new LinkLabel();
             SuspendLayout();
             // 
             // Emri
@@ -142,11 +143,24 @@
             label5.TabIndex = 14;
             label5.Text = "Mbiemri";
             // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("Segoe UI", 14F);
+            linkLabel1.Location = new Point(605, 315);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(64, 32);
+            linkLabel1.TabIndex = 15;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Kyçu";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
             // regjistrimi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(linkLabel1);
             Controls.Add(label5);
             Controls.Add(Mbiemri);
             Controls.Add(CVC);
@@ -178,5 +192,6 @@
         private TextBox CVC;
         private TextBox Mbiemri;
         private Label label5;
+        private LinkLabel linkLabel1;
     }
 }

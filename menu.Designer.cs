@@ -28,93 +28,128 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
+            labelWelcome = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            anulo = new Button();
+            terheqja = new Button();
+            bilanci = new Button();
+            transfer = new Button();
+            deponim = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // labelWelcome
             // 
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(156, 219);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(185, 40);
-            textBox1.TabIndex = 0;
-            textBox1.Text = "Tërheqje e mjeteve";
-            textBox1.TextAlign = HorizontalAlignment.Center;
-            //textBox1.TextChanged += this.textBox1_TextChanged;
+            labelWelcome.AutoSize = true;
+            labelWelcome.Location = new Point(30, 30);
+            labelWelcome.Name = "labelWelcome";
+            labelWelcome.Size = new Size(0, 20);
+            labelWelcome.TabIndex = 0;
             // 
-            // textBox2
+            // label1
             // 
-            textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(376, 219);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(185, 40);
-            textBox2.TabIndex = 1;
-            textBox2.Text = "Shiko bilancin";
-            textBox2.TextAlign = HorizontalAlignment.Center;
-            //textBox2.TextChanged += this.textBox2_TextChanged;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14F);
+            label1.Location = new Point(145, 229);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 32);
+            label1.TabIndex = 5;
             // 
-            // textBox3
+            // label2
             // 
-            textBox3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(598, 219);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(185, 40);
-            textBox3.TabIndex = 2;
-            textBox3.Text = "Transfer i mjeteve";
-            textBox3.TextAlign = HorizontalAlignment.Center;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 14F);
+            label2.Location = new Point(384, 229);
+            label2.Name = "label2";
+            label2.Size = new Size(0, 32);
+            label2.TabIndex = 6;
+            label2.Click += label2_Click;
             // 
-            // textBox4
+            // label3
             // 
-            textBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(376, 281);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(185, 40);
-            textBox4.TabIndex = 3;
-            textBox4.Text = "Anulo";
-            textBox4.TextAlign = HorizontalAlignment.Center;
-            //textBox4.TextChanged += this.textBox4_TextChanged;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14F);
+            label3.Location = new Point(570, 229);
+            label3.Name = "label3";
+            label3.Size = new Size(0, 32);
+            label3.TabIndex = 7;
             // 
-            // textBox5
+            // label4
             // 
-            textBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(156, 281);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(185, 40);
-            textBox5.TabIndex = 4;
-            textBox5.Text = "Deponim i mjeteve";
-            textBox5.TextAlign = HorizontalAlignment.Center;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 14F);
+            label4.Location = new Point(145, 277);
+            label4.Name = "label4";
+            label4.Size = new Size(0, 32);
+            label4.TabIndex = 8;
             // 
-            // textBox6
+            // anulo
             // 
-            textBox6.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(156, 96);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(221, 43);
-            textBox6.TabIndex = 5;
-            textBox6.Text = "Mirësevini,";
+            anulo.Font = new Font("Segoe UI", 12F);
+            anulo.Location = new Point(384, 280);
+            anulo.Name = "anulo";
+            anulo.Size = new Size(171, 62);
+            anulo.TabIndex = 9;
+            anulo.Text = "Anulo";
+            anulo.UseVisualStyleBackColor = true;
+            // 
+            // terheqja
+            // 
+            terheqja.Font = new Font("Segoe UI", 12F);
+            terheqja.Location = new Point(164, 210);
+            terheqja.Name = "terheqja";
+            terheqja.Size = new Size(193, 59);
+            terheqja.TabIndex = 10;
+            terheqja.Text = "Tërheqje e mjeteve";
+            terheqja.UseVisualStyleBackColor = true;
+            // 
+            // bilanci
+            // 
+            bilanci.Font = new Font("Segoe UI", 12F);
+            bilanci.Location = new Point(384, 210);
+            bilanci.Name = "bilanci";
+            bilanci.Size = new Size(171, 59);
+            bilanci.TabIndex = 11;
+            bilanci.Text = "Shiko bilancin";
+            bilanci.UseVisualStyleBackColor = true;
+            // 
+            // transfer
+            // 
+            transfer.Font = new Font("Segoe UI", 12F);
+            transfer.Location = new Point(589, 210);
+            transfer.Name = "transfer";
+            transfer.Size = new Size(187, 59);
+            transfer.TabIndex = 12;
+            transfer.Text = "Transfer i mjeteve";
+            transfer.UseVisualStyleBackColor = true;
+            // 
+            // deponim
+            // 
+            deponim.Font = new Font("Segoe UI", 12F);
+            deponim.Location = new Point(164, 280);
+            deponim.Name = "deponim";
+            deponim.Size = new Size(193, 62);
+            deponim.TabIndex = 13;
+            deponim.Text = "Deponim i mjeteve";
+            deponim.UseVisualStyleBackColor = true;
             // 
             // menu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(940, 540);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            ClientSize = new Size(932, 543);
+            Controls.Add(deponim);
+            Controls.Add(transfer);
+            Controls.Add(bilanci);
+            Controls.Add(terheqja);
+            Controls.Add(anulo);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(labelWelcome);
             FormBorderStyle = FormBorderStyle.None;
             Name = "menu";
             Text = "Tërheqje e mjeteve";
@@ -123,12 +158,14 @@
         }
 
         #endregion
-
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Button anulo;
+        private Button terheqja;
+        private Button bilanci;
+        private Button transfer;
+        private Button deponim;
     }
 }

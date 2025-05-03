@@ -12,13 +12,22 @@ namespace atm
 {
     public partial class menu : Form
     {
-        public menu()
+        private Label labelWelcome;
+
+        // Constructor for menu class to receive 'emri' and set the label
+        public menu(string emri)
         {
             InitializeComponent();
+
+            // Set up the label or any other control to display the welcome message
+            labelWelcome.Text = $"Miresevini, {emri}";
         }
 
-        string connectionString = "Data Source=DESKTOP-8F3GQ0A\\SQLEXPRESS;Initial Catalog=atm;Integrated Security=True";
+        private void label2_Click(object sender, EventArgs e)
+        {
 
-        
+        }
+
+        // Other code for your menu form...
     }
 }

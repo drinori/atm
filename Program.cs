@@ -14,7 +14,7 @@ namespace atm
             // Application.Run(new dashboard());
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new menu());
+            Application.Run(new dashboard());
         }
     }
 }

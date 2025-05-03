@@ -33,7 +33,7 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            anulo = new Button();
+            qkyqu = new Button();
             terheqja = new Button();
             bilanci = new Button();
             transfer = new Button();
@@ -65,7 +65,6 @@
             label2.Name = "label2";
             label2.Size = new Size(0, 32);
             label2.TabIndex = 6;
-            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -85,22 +84,23 @@
             label4.Size = new Size(0, 32);
             label4.TabIndex = 8;
             // 
-            // anulo
+            // qkyqu
             // 
-            anulo.Font = new Font("Segoe UI", 12F);
-            anulo.Location = new Point(384, 280);
-            anulo.Name = "anulo";
-            anulo.Size = new Size(171, 62);
-            anulo.TabIndex = 9;
-            anulo.Text = "Anulo";
-            anulo.UseVisualStyleBackColor = true;
+            qkyqu.Font = new Font("Segoe UI", 12F);
+            qkyqu.Location = new Point(390, 390);
+            qkyqu.Name = "qkyqu";
+            qkyqu.Size = new Size(171, 62);
+            qkyqu.TabIndex = 9;
+            qkyqu.Text = "Çkyçu";
+            qkyqu.UseVisualStyleBackColor = true;
+            qkyqu.Click += qkyqu_Click;
             // 
             // terheqja
             // 
             terheqja.Font = new Font("Segoe UI", 12F);
-            terheqja.Location = new Point(164, 210);
+            terheqja.Location = new Point(561, 164);
             terheqja.Name = "terheqja";
-            terheqja.Size = new Size(193, 59);
+            terheqja.Size = new Size(193, 62);
             terheqja.TabIndex = 10;
             terheqja.Text = "Tërheqje e mjeteve";
             terheqja.UseVisualStyleBackColor = true;
@@ -108,9 +108,9 @@
             // bilanci
             // 
             bilanci.Font = new Font("Segoe UI", 12F);
-            bilanci.Location = new Point(384, 210);
+            bilanci.Location = new Point(191, 164);
             bilanci.Name = "bilanci";
-            bilanci.Size = new Size(171, 59);
+            bilanci.Size = new Size(193, 62);
             bilanci.TabIndex = 11;
             bilanci.Text = "Shiko bilancin";
             bilanci.UseVisualStyleBackColor = true;
@@ -118,9 +118,9 @@
             // transfer
             // 
             transfer.Font = new Font("Segoe UI", 12F);
-            transfer.Location = new Point(589, 210);
+            transfer.Location = new Point(561, 287);
             transfer.Name = "transfer";
-            transfer.Size = new Size(187, 59);
+            transfer.Size = new Size(193, 62);
             transfer.TabIndex = 12;
             transfer.Text = "Transfer i mjeteve";
             transfer.UseVisualStyleBackColor = true;
@@ -128,7 +128,7 @@
             // deponim
             // 
             deponim.Font = new Font("Segoe UI", 12F);
-            deponim.Location = new Point(164, 280);
+            deponim.Location = new Point(191, 287);
             deponim.Name = "deponim";
             deponim.Size = new Size(193, 62);
             deponim.TabIndex = 13;
@@ -144,7 +144,7 @@
             Controls.Add(transfer);
             Controls.Add(bilanci);
             Controls.Add(terheqja);
-            Controls.Add(anulo);
+            Controls.Add(qkyqu);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -162,7 +162,7 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private Button anulo;
+        private Button qkyqu;
         private Button terheqja;
         private Button bilanci;
         private Button transfer;

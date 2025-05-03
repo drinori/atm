@@ -23,11 +23,16 @@ namespace atm
             labelWelcome.Text = $"Miresevini, {emri}";
         }
 
-        private void label2_Click(object sender, EventArgs e)
+
+        private void qkyqu_Click(object sender, EventArgs e)
         {
-
+            dashboard qkyqu = new dashboard();
+            qkyqu.Show();
+            this.Hide();
         }
-
-        // Other code for your menu form...
     }
+
+
+    // Other code for your menu form...
 }
+

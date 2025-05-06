@@ -14,12 +14,10 @@ namespace atm
     {
         private Label labelWelcome;
 
-        // Constructor for menu class to receive 'emri' and set the label
         public menu(string emri)
         {
             InitializeComponent();
 
-            // Set up the label or any other control to display the welcome message
             labelWelcome.Text = $"Miresevini, {emri}";
         }
 
@@ -30,9 +28,14 @@ namespace atm
             qkyqu.Show();
             this.Hide();
         }
+
+        private void deponim_Click(object sender, EventArgs e)
+        {
+            deponim deponim = new deponim();
+            deponim.Show();
+            this.Hide();
+        }
     }
 
-
-    // Other code for your menu form...
 }
 

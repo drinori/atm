@@ -134,6 +134,7 @@
             deponim.TabIndex = 13;
             deponim.Text = "Deponim i mjeteve";
             deponim.UseVisualStyleBackColor = true;
+            deponim.Click += deponim_Click;
             // 
             // menu
             // 

@@ -31,16 +31,15 @@ namespace atm
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        // Use the correct parameter types and values
                         command.Parameters.AddWithValue("@Iban", textBox1.Text);
                         command.Parameters.AddWithValue("@Pin", textBox2.Text);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            if (reader.Read()) // If data is returned
+                            if (reader.Read())
                             {
-                                string emri = reader["emri"].ToString(); // Safely get the "emri" column value
-                                menu menuForm = new menu(emri); // Pass emri to the menu form
+                                string emri = reader["emri"].ToString();
+                                menu menuForm = new menu(emri);
                                 menuForm.Show();
                                 this.Hide();
                             }
